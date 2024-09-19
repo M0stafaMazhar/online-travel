@@ -1,1 +1,15 @@
-<p>flight-result works!</p>
+<div class="container">
+  <div class="row">
+    <div class="col-12 mb-4">
+      <app-search-criteria></app-search-criteria>
+    </div>
+    <div class="col-2">
+      <app-filter></app-filter>
+    </div>
+    <div class="col-10">
+      <div class="col-12 mb-4" *ngFor="let flightData of airIt">
+        <app-flight-card [flight]="flightData"></app-flight-card>
+      </div>
+    </div>
+  </div>
+</div>

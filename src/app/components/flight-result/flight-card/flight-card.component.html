@@ -1,1 +1,17 @@
-<p>flight-card works!</p>
+<div class="card">
+  <div class="card-body d-flex flex-wrap justify-content-around">
+    <img
+      src="{{ flight.allJourney.flights[0].flightAirline.airlineLogo }}"
+      alt=""
+    />
+    <h5 class="card-title">{{ flight.deptDate | date }}</h5>
+    <p class="card-text">Dep: {{ flight.totalDuration }} Minutes</p>
+    <p class="card-text">
+      Arrive: {{ flight.deptDate | date : "MMM d, y, h:mm a" }}
+    </p>
+    <p class="card-text">
+      {{ flight.arrivalDate | date : "MMM d, y, h:mm a" }}
+    </p>
+    <button class="btn btn-primary col-lg-2 col-12">Book Now</button>
+  </div>
+</div>
