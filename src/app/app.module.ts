@@ -10,6 +10,7 @@ import { SelectedFlightComponent } from './bonus/selected-flight/selected-flight
 import { FilterComponent } from './components/flight-result/filter/filter.component';
 import { FlightCardComponent } from './components/flight-result/flight-card/flight-card.component';
 import { SearchCriteriaComponent } from './components/search-criteria/search-criteria.component';
+import { ConvrtTimePipe } from './pipes/convert-time.pipe';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { SearchCriteriaComponent } from './components/search-criteria/search-cri
     FilterComponent,
     FlightCardComponent,
     SearchCriteriaComponent,
+    ConvrtTimePipe,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],

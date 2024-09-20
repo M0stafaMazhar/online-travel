@@ -1,17 +1,40 @@
-<div class="card">
-  <div class="card-body d-flex flex-wrap justify-content-around">
-    <img
-      src="{{ flight.allJourney.flights[0].flightAirline.airlineLogo }}"
-      alt=""
-    />
-    <h5 class="card-title">{{ flight.deptDate | date }}</h5>
-    <p class="card-text">Dep: {{ flight.totalDuration }} Minutes</p>
-    <p class="card-text">
-      Arrive: {{ flight.deptDate | date : "MMM d, y, h:mm a" }}
-    </p>
-    <p class="card-text">
-      {{ flight.arrivalDate | date : "MMM d, y, h:mm a" }}
-    </p>
-    <button class="btn btn-primary col-lg-2 col-12">Book Now</button>
+<div class="card text-success">
+  <div class="card-body row">
+    <div class="col-12 col-lg-3">
+      <img
+        src="{{ flight.allJourney.flights[0].flightAirline.airlineLogo }}"
+        alt="{{ flight.allJourney.flights[0].flightAirline.airlineName }} logo"
+      />
+      <p>
+        {{ flight.allJourney.flights[0].flightAirline.alternativeBusinessName }}
+      </p>
+    </div>
+    <div class="row m-0 col-12 col-lg-6">
+      <div class="col-3">
+        <h6>{{ flight.allJourney.flights[0].flightAirline.airlineCode }}</h6>
+        <p>{{ flight.deptDate | date : "h:mm a" }}</p>
+      </div>
+      <div class="text-center col-6">
+        <p class="">{{ flight.totalDuration | convertTime }}</p>
+        <hr />
+        <p class="" *ngIf="flight.allJourney.flights[0].flightDTO.length > 1">
+          {{ flight.allJourney.flights[0].flightDTO.length - 1 }} Stops
+        </p>
+      </div>
+      <div class="col-3">
+        <h6>CAI</h6>
+        <p class="card-text">
+          {{ flight.arrivalDate | date : "h:mm a" }}
+        </p>
+      </div>
+    </div>
+    <div class="col-12 col-lg-3 text-center">
+      <h5>
+        {{
+          flight.itinTotalFare.amount + " " + flight.itinTotalFare.currencyCode
+        }}
+      </h5>
+      <button class="btn btn-success col-12 col-lg-6">Book Now</button>
+    </div>
   </div>
 </div>

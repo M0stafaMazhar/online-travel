@@ -5,5 +5,5 @@ export interface Flight {
   elapsedTime: number;
   stopsNum: number;
   flightAirline: Airline;
-  flighDTO: FlightDTO[];
+  flightDTO: FlightDTO[];
 }
