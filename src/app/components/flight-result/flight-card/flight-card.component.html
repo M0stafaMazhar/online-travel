@@ -1,28 +1,28 @@
 <div class="card text-success">
   <div class="card-body row">
-    <div class="col-12 col-lg-3">
+    <div class="col-12 col-lg-3 text-center">
       <img
-        src="{{ flight.allJourney.flights[0].flightAirline.airlineLogo }}"
-        alt="{{ flight.allJourney.flights[0].flightAirline.airlineName }} logo"
+        src="{{ airline.airlineLogo }}"
+        alt="{{ airline.airlineName }} logo"
       />
       <p>
-        {{ flight.allJourney.flights[0].flightAirline.alternativeBusinessName }}
+        {{ airline.alternativeBusinessName }}
       </p>
     </div>
     <div class="row m-0 col-12 col-lg-6">
       <div class="col-3">
-        <h6>{{ flight.allJourney.flights[0].flightAirline.airlineCode }}</h6>
+        <h6>{{ depAirport.airportCode }}</h6>
         <p>{{ flight.deptDate | date : "h:mm a" }}</p>
       </div>
       <div class="text-center col-6">
         <p class="">{{ flight.totalDuration | convertTime }}</p>
-        <hr />
+        <hr class="" />
         <p class="" *ngIf="flight.allJourney.flights[0].flightDTO.length > 1">
-          {{ flight.allJourney.flights[0].flightDTO.length - 1 }} Stops
+          Stops : {{ numOfStops }}
         </p>
       </div>
       <div class="col-3">
-        <h6>CAI</h6>
+        <h6>{{ arrivalAirport.airportCode }}</h6>
         <p class="card-text">
           {{ flight.arrivalDate | date : "h:mm a" }}
         </p>

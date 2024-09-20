@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
+import { MatExpansionModule } from '@angular/material/expansion';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,6 +12,8 @@ import { FilterComponent } from './components/flight-result/filter/filter.compon
 import { FlightCardComponent } from './components/flight-result/flight-card/flight-card.component';
 import { SearchCriteriaComponent } from './components/search-criteria/search-criteria.component';
 import { ConvrtTimePipe } from './pipes/convert-time.pipe';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -23,7 +26,14 @@ import { ConvrtTimePipe } from './pipes/convert-time.pipe';
     SearchCriteriaComponent,
     ConvrtTimePipe,
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
+    BrowserAnimationsModule,
+    MatExpansionModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

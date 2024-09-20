@@ -1,5 +1,59 @@
-<div class="card">
-  <div class="card-body">
-    <h5 class="card-title">Filter</h5>
-  </div>
-</div>
+<mat-accordion>
+  <mat-expansion-panel hideToggle>
+    <mat-expansion-panel-header>
+      <mat-panel-title> <h5 class="text-success">Filters</h5> </mat-panel-title>
+    </mat-expansion-panel-header>
+    <form action="" class="text-success">
+      <input
+        name="airport"
+        type="text"
+        class="form-control"
+        placeholder="Airport..."
+      />
+      <hr />
+      <h6>Stops</h6>
+      <div class="from-group">
+        <label for="direct">
+          <input
+            name="direct"
+            type="checkbox"
+            [(ngModel)]="filters.stops.direct"
+          />
+          Direct
+        </label>
+        <br />
+        <label for="stops">
+          <input name="stops" type="checkbox" [(ngModel)]="filters.stops.one" />
+          1 Stop
+        </label>
+        <br />
+        <label for="stops">
+          <input
+            name="stops"
+            type="checkbox"
+            [(ngModel)]="filters.stops.more"
+          />
+          2+ Stops
+        </label>
+      </div>
+      <hr />
+      <div class="form-group">
+        <label for="ticketType"><h6>Flexible Tickets</h6></label>
+        <select
+          name="ticketType"
+          id=""
+          class="form-control"
+          [(ngModel)]="filters.refundable"
+        >
+          <option [ngValue]="true">Refundable</option>
+          <option [ngValue]="false">Not-Refundable</option>
+        </select>
+      </div>
+      <hr />
+
+      <button type="button" class="brn btn-success col-12" (click)="onFilter()">
+        Filter
+      </button>
+    </form>
+  </mat-expansion-panel>
+</mat-accordion>

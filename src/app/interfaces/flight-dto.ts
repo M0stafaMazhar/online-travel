@@ -1,5 +1,5 @@
 import { Airline } from './airline';
-import { Airpor } from './airpor';
+import { Airport } from './airport';
 import { FlightInfo } from './flight-info';
 import { SegmentDetails } from './segment-details';
 
@@ -14,8 +14,8 @@ export interface FlightDTO {
   arrivalDate: string;
   flightAirline: Airline;
   operatedAirline: Airline;
-  departureTerminalAirport: Airpor;
-  arrivalTerminalAirport: Airpor;
+  departureTerminalAirport: Airport;
+  arrivalTerminalAirport: Airport;
   transitTime: string;
   flightInfo: FlightInfo;
   segmentDetails: SegmentDetails;

@@ -1,7 +1,7 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FlightResults } from 'src/app/interfaces/flight-results';
 import { AirItinerary } from 'src/app/interfaces/air-itinerary';
+import { FlightsDataService } from 'src/app/services/flights-data.service';
 
 @Component({
   selector: 'app-flight-result',
@@ -10,12 +10,21 @@ import { AirItinerary } from 'src/app/interfaces/air-itinerary';
 })
 export class FlightResultComponent implements OnInit {
   flightResults: FlightResults;
-  airIt: AirItinerary[];
-  constructor(private http: HttpClient) {}
+  airItineries: AirItinerary[];
+  displayiedItineraries: AirItinerary[];
+  constructor(private flightsServise: FlightsDataService) {}
   ngOnInit(): void {
-    this.http.get('assets/response.json').subscribe((res: FlightResults) => {
+    this.flightsServise.getItineraries().subscribe((res) => {
       this.flightResults = res;
-      this.airIt = res.airItineraries;
+      this.airItineries = res.airItineraries;
+      this.displayiedItineraries = this.airItineries;
+    });
+
+    this.flightsServise.filterSubject.subscribe((filters) => {
+      this.displayiedItineraries = this.flightsServise.filter(
+        filters,
+        this.airItineries
+      );
     });
   }
 }

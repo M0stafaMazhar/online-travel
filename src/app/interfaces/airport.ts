@@ -1,4 +1,4 @@
-export interface Airpor {
+export interface Airport {
   airportCode: string;
   airportName: string;
   cityName: string;
