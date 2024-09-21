@@ -9,6 +9,7 @@
         type="text"
         class="form-control"
         placeholder="Airport..."
+        [(ngModel)]="filters.airportQuery"
       />
       <hr />
       <h6>Stops</h6>
@@ -22,32 +23,26 @@
           Direct
         </label>
         <br />
-        <label for="stops">
-          <input name="stops" type="checkbox" [(ngModel)]="filters.stops.one" />
+        <label for="one">
+          <input name="sone" type="checkbox" [(ngModel)]="filters.stops.one" />
           1 Stop
         </label>
         <br />
-        <label for="stops">
-          <input
-            name="stops"
-            type="checkbox"
-            [(ngModel)]="filters.stops.more"
-          />
+        <label for="more">
+          <input name="more" type="checkbox" [(ngModel)]="filters.stops.more" />
           2+ Stops
         </label>
       </div>
       <hr />
       <div class="form-group">
-        <label for="ticketType"><h6>Flexible Tickets</h6></label>
-        <select
-          name="ticketType"
-          id=""
-          class="form-control"
-          [(ngModel)]="filters.refundable"
-        >
-          <option [ngValue]="true">Refundable</option>
-          <option [ngValue]="false">Not-Refundable</option>
-        </select>
+        <label for="refundable">
+          <input
+            name="refundable"
+            type="checkbox"
+            [(ngModel)]="filters.refundable"
+          />
+          Refundable
+        </label>
       </div>
       <hr />
 

@@ -1,5 +1,5 @@
 export interface Filters {
-  // airport: string;
+  airportQuery: string;
   refundable: boolean;
   stops: {
     direct: boolean;
