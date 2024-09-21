@@ -1,1 +1,49 @@
-<p>search-criteria works!</p>
+<div class="card text-success">
+  <div class="card-body">
+    <form action="" class="row">
+      <div class="col-6 col-lg-3 mb-2 form-group">
+        <label for="depCity">Departing City</label>
+        <input
+          name="depCity"
+          type="text"
+          class="form-control"
+          [(ngModel)]="searchCriteria.flights[0].departingFrom"
+        />
+      </div>
+      <div class="col-6 col-lg-3 mb-2 form-group">
+        <label for="arrivCity">Ariving City</label>
+        <input
+          name="arrivCity"
+          type="text"
+          class="form-control"
+          [(ngModel)]="searchCriteria.flights[0].arrivingTo"
+        />
+      </div>
+      <div class="col-4 col-lg-2 mb-2 form-group">
+        <label for="date">Flight Date</label>
+        <input
+          name="date"
+          type="date"
+          class="form-control"
+          [(ngModel)]="searchCriteria.flights[0].departingOnDate.split('T')[0]"
+        />
+      </div>
+      <div class="col-4 col-lg-2 mb-2 form-group">
+        <label for="class">Class</label>
+        <input
+          name="class"
+          class="form-control"
+          [(ngModel)]="searchCriteria.selectedFlightClass"
+        />
+      </div>
+      <div class="col-4 col-lg-2 mb-2 form-group">
+        <label for="numOfTravellers">Travellers</label>
+        <input
+          name="numOfTravellers"
+          class="form-control"
+          [(ngModel)]="searchCriteria.totalPassengersNum"
+        />
+      </div>
+    </form>
+  </div>
+</div>

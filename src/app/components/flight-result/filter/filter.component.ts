@@ -10,11 +10,11 @@ import { FlightsDataService } from 'src/app/services/flights-data.service';
 export class FilterComponent {
   filters: Filters = {
     stops: {
-      direct: true,
-      one: true,
-      more: true,
+      direct: false,
+      one: false,
+      more: false,
     },
-    refundable: true,
+    refundable: false,
     airportQuery: '',
   };
 
@@ -22,6 +22,5 @@ export class FilterComponent {
 
   onFilter() {
     this.flightService.filterSubject.next(this.filters);
-    console.log(this.filters);
   }
 }

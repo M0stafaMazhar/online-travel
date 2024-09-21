@@ -14,6 +14,10 @@ import { SearchCriteriaComponent } from './components/search-criteria/search-cri
 import { ConvrtTimePipe } from './pipes/convert-time.pipe';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
+import { ErrorComponent } from './components/error/error.component';
+import { NoDataComponent } from './components/no-data/no-data.component';
+import { LoadingSpinnerComponent } from './components/loading-spinner/loading-spinner.component';
+import { DisableArabicDirective } from './directives/disable-arabic.directive';
 
 @NgModule({
   declarations: [
@@ -25,6 +29,10 @@ import { FormsModule } from '@angular/forms';
     FlightCardComponent,
     SearchCriteriaComponent,
     ConvrtTimePipe,
+    ErrorComponent,
+    NoDataComponent,
+    LoadingSpinnerComponent,
+    DisableArabicDirective,
   ],
   imports: [
     BrowserModule,

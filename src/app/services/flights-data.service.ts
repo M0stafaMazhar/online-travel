@@ -25,12 +25,17 @@ export class FlightsDataService {
 
       let numOfStops = itin.allJourney.flights[0].flightDTO.length;
 
+      let noStopsFilter: boolean =
+        !filters.stops.direct && !filters.stops.one && !filters.stops.more;
+
       let stopsFilter: boolean =
+        noStopsFilter ||
         (filters.stops.direct && numOfStops == 1) ||
         (filters.stops.one && numOfStops == 2) ||
         (filters.stops.more && numOfStops > 2);
 
-      let refundableFilter = filters.refundable == itin.isRefundable;
+      let refundableFilter =
+        !filters.refundable || (filters.refundable && itin.isRefundable);
 
       let searchFilter = depAirportName.includes(
         filters.airportQuery.toLocaleLowerCase()

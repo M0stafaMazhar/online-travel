@@ -3,14 +3,29 @@
     <mat-expansion-panel-header>
       <mat-panel-title> <h5 class="text-success">Filters</h5> </mat-panel-title>
     </mat-expansion-panel-header>
-    <form action="" class="text-success">
-      <input
-        name="airport"
-        type="text"
-        class="form-control"
-        placeholder="Airport..."
-        [(ngModel)]="filters.airportQuery"
-      />
+    <form class="text-success" #filterForm="ngForm">
+      <div class="form-group">
+        <input
+          name="airportQuery"
+          ngModel
+          type="text"
+          class="form-control"
+          [ngClass]="{
+            'border-danger':
+              airportQuery.dirty && airportQuery.hasError('noArabic')
+          }"
+          placeholder="Airport..."
+          appDisableArabic
+          [(ngModel)]="filters.airportQuery"
+          #airportQuery="ngModel"
+        />
+        <div
+          *ngIf="airportQuery.dirty && airportQuery.hasError('noArabic')"
+          class="text-danger"
+        >
+          <p>Arabic Not Allowed</p>
+        </div>
+      </div>
       <hr />
       <h6>Stops</h6>
       <div class="from-group">
