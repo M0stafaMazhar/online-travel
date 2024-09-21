@@ -1,40 +1,19 @@
 <div class="card text-success">
-  <div class="card-body row">
-    <div class="col-12 col-lg-3 text-center">
-      <img
-        src="{{ airline.airlineLogo }}"
-        alt="{{ airline.airlineName }} logo"
-      />
-      <p>
-        {{ airline.alternativeBusinessName }}
-      </p>
-    </div>
-    <div class="row m-0 col-12 col-lg-6">
-      <div class="col-3">
-        <h6>{{ depAirport.airportCode }}</h6>
-        <p>{{ flight.deptDate | date : "h:mm a" }}</p>
-      </div>
-      <div class="text-center col-6">
-        <p class="">{{ flight.totalDuration | convertTime }}</p>
-        <hr class="" />
-        <p class="" *ngIf="flight.allJourney.flights[0].flightDTO.length > 1">
-          Stops : {{ numOfStops }}
-        </p>
-      </div>
-      <div class="col-3">
-        <h6>{{ arrivalAirport.airportCode }}</h6>
-        <p class="card-text">
-          {{ flight.arrivalDate | date : "h:mm a" }}
-        </p>
-      </div>
-    </div>
-    <div class="col-12 col-lg-3 text-center">
-      <h5>
-        {{
-          flight.itinTotalFare.amount + " " + flight.itinTotalFare.currencyCode
-        }}
-      </h5>
-      <button class="btn btn-success col-12 col-lg-6">Book Now</button>
-    </div>
+  <div
+    class="card-body row text-center"
+    *ngFor="let singleFlight of flight.allJourney.flights"
+  >
+    <app-flight-path
+      [singleFlight]="singleFlight"
+      [flightDates]="{
+        duration: flight.totalDuration,
+        depDate: flight.deptDate,
+        arriveDate: flight.arrivalDate
+      }"
+    ></app-flight-path>
   </div>
+  <hr />
+  <h5 class="text-end mx-4">
+    {{ flight.itinTotalFare.amount + " " + flight.itinTotalFare.currencyCode }}
+  </h5>
 </div>

@@ -18,6 +18,7 @@ import { ErrorComponent } from './components/error/error.component';
 import { NoDataComponent } from './components/no-data/no-data.component';
 import { LoadingSpinnerComponent } from './components/loading-spinner/loading-spinner.component';
 import { DisableArabicDirective } from './directives/disable-arabic.directive';
+import { FlightPathComponent } from './components/flight-result/flight-card/flight-path/flight-path.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { DisableArabicDirective } from './directives/disable-arabic.directive';
     NoDataComponent,
     LoadingSpinnerComponent,
     DisableArabicDirective,
+    FlightPathComponent,
   ],
   imports: [
     BrowserModule,

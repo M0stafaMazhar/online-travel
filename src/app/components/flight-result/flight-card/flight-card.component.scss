@@ -1,5 +1,7 @@
 .card {
   transition: transform 0.3s;
+  cursor: pointer;
+  box-shadow: 1px 1px 5px gray;
 }
 
 .card:hover {

@@ -1,0 +1,31 @@
+<div class="row m-0">
+  <div class="col-12 col-lg-4 text-center">
+    <img
+      src="{{ airline.airlineLogo }}"
+      alt="{{ airline.airlineName }} logo"
+      class=""
+    />
+    <p>
+      {{ airline.alternativeBusinessName }}
+    </p>
+  </div>
+  <div class="col-12 col-lg-8">
+    <div class="row m-0 col-12 col-lg-8">
+      <div class="col-3">
+        <h6>{{ depAirport.airportCode }}</h6>
+        <p>{{ flightDates.depDate | date : "h:mm a" }}</p>
+      </div>
+      <div class="text-center col-6">
+        <p class="">{{ flightDates.duration | convertTime }}</p>
+        <hr class="" />
+        <p class="" *ngIf="numOfStops > 0">Stops : {{ numOfStops }}</p>
+      </div>
+      <div class="col-3">
+        <h6>{{ arrivalAirport.airportCode }}</h6>
+        <p class="card-text">
+          {{ flightDates.arriveDate | date : "h:mm a" }}
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
