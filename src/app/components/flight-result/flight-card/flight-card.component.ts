@@ -9,7 +9,7 @@ import { AirItinerary } from 'src/app/interfaces/air-itinerary';
 export class FlightCardComponent {
   @Input() flight: AirItinerary;
 
-  selecttFlight() {
+  selectFlight() {
     localStorage.setItem('selectedFlight', JSON.stringify(this.flight));
   }
 }

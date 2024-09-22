@@ -20,6 +20,7 @@ import { LoadingSpinnerComponent } from './components/loading-spinner/loading-sp
 import { DisableArabicDirective } from './directives/disable-arabic.directive';
 import { FlightPathComponent } from './components/flight-result/flight-card/flight-path/flight-path.component';
 import { DtoStopComponent } from './components/dto-stop/dto-stop.component';
+import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { DtoStopComponent } from './components/dto-stop/dto-stop.component';
     DisableArabicDirective,
     FlightPathComponent,
     DtoStopComponent,
+    NavBarComponent,
   ],
   imports: [
     BrowserModule,

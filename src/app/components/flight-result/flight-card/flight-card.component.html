@@ -3,7 +3,7 @@
     [routerLink]="'/flight-details'"
     class="card-body row text-center"
     *ngFor="let singleFlight of flight.allJourney.flights"
-    (click)="selecttFlight()"
+    (click)="selectFlight()"
   >
     <app-flight-path
       [singleFlight]="singleFlight"
