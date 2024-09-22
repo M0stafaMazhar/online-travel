@@ -18,7 +18,7 @@
     <div class="text-center col-6">
       <p class="">{{ flightDates.duration | convertTime }}</p>
       <hr class="" />
-      <p class="" *ngIf="numOfStops > 0">Stops : {{ numOfStops }}</p>
+      <p class="" *ngIf="numOfStops > 0">{{"STOPS" | translate}} : {{ numOfStops }}</p>
     </div>
     <div class="col-3">
       <h6>{{ arrivalAirport.airportCode }}</h6>

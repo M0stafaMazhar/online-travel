@@ -13,7 +13,7 @@
       <mat-expansion-panel hideToggle>
         <mat-expansion-panel-header>
           <mat-panel-title>
-            <h5 class="text-success">Journy : {{i + 1}}</h5>
+            <h5 class="text-success">{{"JOURNY" | translate}} : {{i + 1}}</h5>
           </mat-panel-title>
         </mat-expansion-panel-header>
         <div
@@ -23,7 +23,7 @@
           "
         >
           <app-dto-stop [flightStop]="flightStop"></app-dto-stop>
-          <h6 class=" text-center">Flight Number : {{flightStop.flightInfo.flightNumber}}</h6>
+          <h6 class=" text-center">{{"FLIGHTNUM" | translate}} : {{flightStop.flightInfo.flightNumber}}</h6>
         </div>
       </mat-expansion-panel>
     </mat-accordion>
@@ -32,5 +32,5 @@
 
 <div class="col-12 col-lg-2 mx-auto my-4">
     
-  <button type="button" class="btn btn-success">Confirm Flight</button>
+  <button type="button" class="btn btn-success">{{"CONFIRM" | translate}}</button>
   </div>
