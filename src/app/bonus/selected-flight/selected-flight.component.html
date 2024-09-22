@@ -1,5 +1,11 @@
-<div class="col-lg-8 col-12 mx-auto my-4">
-  <app-flight-card [flight]="selectedFlight"></app-flight-card>
+<div class="col-lg-8 col-12 mx-auto my-4" *ngFor="let flight of selectedFlight.allJourney.flights">
+  <div class="card text-success">
+    <div class="card-body row text-center">
+      <app-flight-path [singleFlight]="flight" [flightDates]="{ duration: selectedFlight.totalDuration,
+      depDate: selectedFlight.deptDate ,
+      arriveDate:selectedFlight.arrivalDate}"></app-flight-path>
+      </div>
+  </div>
 </div>
 <div class="card col-lg-8 col-12 mx-auto">
   <div class="card-body" *ngFor="let journy of selectedFlight.allJourney.flights , let i = index ">

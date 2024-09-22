@@ -1,16 +1,16 @@
 <div class="row m-0">
-  <div class="col-12 col-lg-4 text-center">
+  <div class="col-12 col-lg-2 text-center">
     <img
       src="{{ airline.airlineLogo }}"
       alt="{{ airline.airlineName }} logo"
-      class="w-25"
+      class=""
     />
     <p>
       {{ airline.alternativeBusinessName }}
     </p>
   </div>
 
-  <div class="row m-0 col-12 col-lg-8">
+  <div class="row m-0 col-12 col-lg-8 text-center">
     <div class="col-3">
       <h6>{{ depAirport.airportCode }}</h6>
       <p>{{ flightStop.departureDate | date : "h:mm a" }}</p>
