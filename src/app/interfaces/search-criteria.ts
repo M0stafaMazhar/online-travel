@@ -10,7 +10,7 @@ export interface SearchCriteria {
   childNum: number;
   currency: string;
   device: string;
-  flightType: string; //one & twoway}
+  flightType: string;
   infantAges: number;
   infantNum: number;
   language: string;

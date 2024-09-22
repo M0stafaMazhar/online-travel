@@ -1,15 +1,15 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { AirItinerary } from 'src/app/interfaces/air-itinerary';
-import { Airline } from 'src/app/interfaces/airline';
-import { Airport } from 'src/app/interfaces/airport';
 
 @Component({
   selector: 'app-flight-card',
   templateUrl: './flight-card.component.html',
   styleUrls: ['./flight-card.component.scss'],
 })
-export class FlightCardComponent implements OnInit {
+export class FlightCardComponent {
   @Input() flight: AirItinerary;
 
-  ngOnInit(): void {}
+  selecttFlight() {
+    localStorage.setItem('selectedFlight', JSON.stringify(this.flight));
+  }
 }

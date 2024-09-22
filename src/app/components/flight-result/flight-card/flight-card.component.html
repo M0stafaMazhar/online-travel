@@ -1,7 +1,9 @@
 <div class="card text-success">
   <div
+    [routerLink]="'/flight-details'"
     class="card-body row text-center"
     *ngFor="let singleFlight of flight.allJourney.flights"
+    (click)="selecttFlight()"
   >
     <app-flight-path
       [singleFlight]="singleFlight"
@@ -12,8 +14,7 @@
       }"
     ></app-flight-path>
   </div>
-  <hr />
-  <h5 class="text-end mx-4">
+  <h5 class="text-center">
     {{ flight.itinTotalFare.amount + " " + flight.itinTotalFare.currencyCode }}
   </h5>
 </div>
