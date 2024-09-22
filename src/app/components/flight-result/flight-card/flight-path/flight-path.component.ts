@@ -9,7 +9,7 @@ import { Flight } from 'src/app/interfaces/flight';
   styleUrls: ['./flight-path.component.scss'],
 })
 export class FlightPathComponent implements OnInit {
-  @Input() singleFlight: Flight;
+  @Input() singleFlight: Flight; //flight data
   @Input() flightDates: {
     duration: number;
     depDate: string;
@@ -22,6 +22,7 @@ export class FlightPathComponent implements OnInit {
   numOfStops: number;
 
   ngOnInit(): void {
+    //initialize displayed data
     this.airline = this.singleFlight.flightAirline;
     this.numOfStops = this.singleFlight.stopsNum;
     this.depAirport = this.singleFlight.flightDTO[0].departureTerminalAirport;

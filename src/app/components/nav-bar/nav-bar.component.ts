@@ -5,19 +5,16 @@ import { ToggleLangService } from 'src/app/services/toggle-lang.service';
 @Component({
   selector: 'app-nav-bar',
   templateUrl: './nav-bar.component.html',
-  styleUrls: ['./nav-bar.component.scss']
+  styleUrls: ['./nav-bar.component.scss'],
 })
 export class NavBarComponent {
-  isEnglish = true;
+  isEnglish = true; //ininal language is english
 
-  constructor(private toggleLangService: ToggleLangService ){
+  constructor(private toggleLangService: ToggleLangService) {}
 
+  changeLanguage() {
+    this.isEnglish = !this.isEnglish; //reverse language flag to change it
+    this.toggleLangService.switchLang(this.isEnglish ? 'en' : 'ar'); //filnd langualg and layout direction based of the flag
+    document.body.dir = this.isEnglish ? 'ltr' : 'rtl';
   }
-
-
-   changeLanguage(){
-    this.isEnglish = !this.isEnglish
-    this.toggleLangService.switchLang(this.isEnglish ? "en" : "ar");
-    document.body.dir = this.isEnglish ? "ltr" : "rtl";
-   }
 }

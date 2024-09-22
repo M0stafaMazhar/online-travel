@@ -1,5 +1,6 @@
 <div class="row m-0">
   <div class="col-12 col-lg-2 text-center">
+    <!--logo container -->
     <img
       src="{{ airline.airlineLogo }}"
       alt="{{ airline.airlineName }} logo"
@@ -12,10 +13,12 @@
 
   <div class="row m-0 col-12 col-lg-8">
     <div class="col-3">
+      <!--flight dep-->
       <h6>{{ depAirport.airportCode }}</h6>
       <p>{{ flightDates.depDate | date : "h:mm a" }}</p>
     </div>
     <div class="text-center col-6">
+      <!--flight path-->
       <p class="">{{ flightDates.duration | convertTime }}</p>
       <app-doted-line [numberOfDots]="numOfStops"></app-doted-line>
       <p class="" *ngIf="numOfStops > 0">
@@ -23,6 +26,7 @@
       </p>
     </div>
     <div class="col-3">
+      <!--flight destination-->
       <h6>{{ arrivalAirport.airportCode }}</h6>
       <p class="card-text">
         {{ flightDates.arriveDate | date : "h:mm a" }}

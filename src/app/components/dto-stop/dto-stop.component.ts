@@ -9,7 +9,7 @@ import { FlightDTO } from 'src/app/interfaces/flight-dto';
   styleUrls: ['./dto-stop.component.scss'],
 })
 export class DtoStopComponent {
-  @Input() flightStop: FlightDTO;
+  @Input() flightStop: FlightDTO; // flight stops array
 
   airline: Airline;
   depAirport: Airport;
@@ -17,6 +17,7 @@ export class DtoStopComponent {
   numOfStops = 0;
 
   ngOnInit(): void {
+    // initialize the data displayed in the component
     this.airline = this.flightStop.flightAirline;
     this.depAirport = this.flightStop.departureTerminalAirport;
     this.arrivalAirport = this.flightStop.arrivalTerminalAirport;

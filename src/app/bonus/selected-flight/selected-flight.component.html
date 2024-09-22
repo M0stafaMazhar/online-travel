@@ -1,29 +1,45 @@
-<div class="col-lg-8 col-12 mx-auto my-4" *ngFor="let flight of selectedFlight.allJourney.flights">
+<div
+  class="col-lg-8 col-12 mx-auto my-4"
+  *ngFor="let flight of selectedFlight.allJourney.flights"
+>
+  <!--flight general details-->
   <div class="card text-success">
     <div class="card-body row text-center">
-      <app-flight-path [singleFlight]="flight" [flightDates]="{ duration: selectedFlight.totalDuration,
-      depDate: selectedFlight.deptDate ,
-      arriveDate:selectedFlight.arrivalDate}"></app-flight-path>
-      </div>
+      <app-flight-path
+        [singleFlight]="flight"
+        [flightDates]="{
+          duration: selectedFlight.totalDuration,
+          depDate: selectedFlight.deptDate,
+          arriveDate: selectedFlight.arrivalDate
+        }"
+      ></app-flight-path>
+    </div>
   </div>
 </div>
 <div class="card col-lg-8 col-12 mx-auto">
-  <div class="card-body" *ngFor="let journy of selectedFlight.allJourney.flights , let i = index ">
+  <!--flight detaild path-->
+  <div
+    class="card-body"
+    *ngFor="let journy of selectedFlight.allJourney.flights; let i = index"
+  >
     <mat-accordion>
       <mat-expansion-panel hideToggle>
         <mat-expansion-panel-header>
           <mat-panel-title>
-            <h5 class="text-success">{{"JOURNY" | translate}} : {{i + 1}}</h5>
+            <h5 class="text-success">
+              {{ "JOURNY" | translate }} : {{ i + 1 }}
+            </h5>
           </mat-panel-title>
         </mat-expansion-panel-header>
         <div
           class="card p-2 text-success"
-          *ngFor="
-            let flightStop of journy.flightDTO
-          "
+          *ngFor="let flightStop of journy.flightDTO"
         >
           <app-dto-stop [flightStop]="flightStop"></app-dto-stop>
-          <h6 class=" text-center">{{"FLIGHTNUM" | translate}} : {{flightStop.flightInfo.flightNumber}}</h6>
+          <h6 class="text-center">
+            {{ "FLIGHTNUM" | translate }} :
+            {{ flightStop.flightInfo.flightNumber }}
+          </h6>
         </div>
       </mat-expansion-panel>
     </mat-accordion>
@@ -31,6 +47,8 @@
 </div>
 
 <div class="text-center text-success my-4">
-  <h5>{{"TOTFARE" | translate}} : {{selectedFlight.itinTotalFare.amount}}</h5>
-  <button class="btn btn-success">{{"CONFIRM" | translate}}</button>
-  </div>
+  <h5>
+    {{ "TOTFARE" | translate }} : {{ selectedFlight.itinTotalFare.amount }}
+  </h5>
+  <button class="btn btn-success">{{ "CONFIRM" | translate }}</button>
+</div>

@@ -1,8 +1,10 @@
 <div class="container">
   <div class="text-center col-12" *ngIf="loadingFlag">
+    <!--loading component-->
     <app-loading-spinner></app-loading-spinner>
   </div>
   <div class="text-center" *ngIf="errFlag">
+    <!--http error component-->
     <app-error></app-error>
   </div>
   <div class="row" *ngIf="!loadingFlag && !errFlag">
@@ -10,13 +12,16 @@
       <app-search-criteria
         [searchCriteria]="flightResults.searchCriteria"
       ></app-search-criteria>
+      <!--display of searched data-->
     </div>
     <div class="col-12 col-lg-3 mb-4">
       <app-filter></app-filter>
+      <!-- filter component-->
     </div>
     <div class="col-12 col-lg-6 row m-0">
       <app-no-data *ngIf="!displayiedItineraries.length"></app-no-data>
       <div class="col-12 mb-4" *ngFor="let flightData of displayiedItineraries">
+        <!--diplay flight results array-->
         <app-flight-card [flight]="flightData"></app-flight-card>
       </div>
     </div>

@@ -1,4 +1,5 @@
 <mat-accordion>
+  <!--expandable container-->
   <mat-expansion-panel hideToggle>
     <mat-expansion-panel-header>
       <mat-panel-title>
@@ -6,6 +7,7 @@
       </mat-panel-title>
     </mat-expansion-panel-header>
     <form class="text-success" #filterForm="ngForm">
+      <!--filters Form-->
       <div class="form-group">
         <input
           name="airportQuery"
@@ -21,6 +23,7 @@
           [(ngModel)]="filters.airportQuery"
           #airportQuery="ngModel"
         />
+        <!--add custom validator directive to disable arabic letters-->
         <div
           *ngIf="airportQuery.dirty && airportQuery.hasError('noArabic')"
           class="text-danger"
@@ -71,6 +74,7 @@
       >
         {{ "FILTER" | translate }}
       </button>
+      <!--disable butoon while invalid form-->
     </form>
   </mat-expansion-panel>
 </mat-accordion>

@@ -6,9 +6,9 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./doted-line.component.scss'],
 })
 export class DotedLineComponent implements OnInit {
-  @Input() numberOfDots = 0;
+  @Input() numberOfDots = 0; // number of stops in the flight
 
-  dots: any[] = [];
+  dots: number[] = [];
 
   ngOnInit(): void {
     this.dots = new Array(this.numberOfDots).fill(0);

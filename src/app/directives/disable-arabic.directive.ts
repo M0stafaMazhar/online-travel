@@ -17,13 +17,14 @@ import {
   ],
 })
 export class DisableArabicDirective implements Validator {
-  arabicRegex = /[\u0600-\u06FF]/;
+  arabicRegex = /[\u0600-\u06FF]/; //regex of arabic characters
 
   constructor() {}
 
   validate(control: AbstractControl): ValidationErrors | null {
     let value = control.value;
     if (this.arabicRegex.test(value)) {
+      //check if input contains arabic characters
       return { noArabic: true };
     }
     return null;

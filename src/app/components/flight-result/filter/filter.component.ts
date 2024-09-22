@@ -9,6 +9,7 @@ import { FlightsDataService } from 'src/app/services/flights-data.service';
 })
 export class FilterComponent {
   filters: Filters = {
+    //initialize filters
     stops: {
       direct: false,
       one: false,
@@ -21,6 +22,7 @@ export class FilterComponent {
   constructor(private flightService: FlightsDataService) {}
 
   onFilter() {
+    //call data filter function
     this.flightService.filterSubject.next(this.filters);
   }
 }

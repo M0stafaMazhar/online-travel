@@ -10,6 +10,7 @@ export class FlightCardComponent {
   @Input() flight: AirItinerary;
 
   selectFlight() {
+    //sore selected flght in local storage to handle page refresh
     localStorage.setItem('selectedFlight', JSON.stringify(this.flight));
   }
 }

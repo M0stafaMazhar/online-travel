@@ -8,6 +8,6 @@ import { AirItinerary } from 'src/app/interfaces/air-itinerary';
 })
 export class SelectedFlightComponent {
   selectedFlight: AirItinerary = JSON.parse(
-    localStorage.getItem('selectedFlight')
+    localStorage.getItem('selectedFlight') // get the stored flight on local storage
   );
 }

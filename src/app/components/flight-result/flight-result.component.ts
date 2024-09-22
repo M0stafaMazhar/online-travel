@@ -21,6 +21,7 @@ export class FlightResultComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.flightsServise.getItineraries().subscribe(
+      //get flight results from data service
       (res) => {
         this.flightResults = res;
         this.airItineries = res.airItineraries;
@@ -34,6 +35,7 @@ export class FlightResultComponent implements OnInit, OnDestroy {
     );
 
     this.filterSubscriptions = this.flightsServise.filterSubject.subscribe(
+      //subscribe to filters subject
       (filters) => {
         this.displayiedItineraries = this.flightsServise.filter(
           filters,
@@ -44,6 +46,7 @@ export class FlightResultComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
+    //removing subscriptions on closing the component
     this.filterSubscriptions.unsubscribe();
   }
 }
