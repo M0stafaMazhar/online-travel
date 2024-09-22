@@ -1,6 +1,7 @@
 {
    "JOURNY":"Journy" ,
    "FLIGHTNUM":"Flight Number",
+   "TOTFARE":"Total Price",
    "CONFIRM":"Confirm Flight",
    "HTTPERROR":"Opps, an error ocurred",
    "GOHOME":"Go Home",
