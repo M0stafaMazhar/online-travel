@@ -6,7 +6,7 @@
     <app-error></app-error>
   </div>
   <div class="row" *ngIf="!loadingFlag && !errFlag">
-    <div class="col-12 my-4 sticky-top">
+    <div class="col-12 my-4">
       <app-search-criteria
         [searchCriteria]="flightResults.searchCriteria"
       ></app-search-criteria>
@@ -16,10 +16,7 @@
     </div>
     <div class="col-12 col-lg-6 row m-0">
       <app-no-data *ngIf="!displayiedItineraries.length"></app-no-data>
-      <div
-        class="col-12 mb-4"
-        *ngFor="let flightData of displayiedItineraries"
-      >
+      <div class="col-12 mb-4" *ngFor="let flightData of displayiedItineraries">
         <app-flight-card [flight]="flightData"></app-flight-card>
       </div>
     </div>

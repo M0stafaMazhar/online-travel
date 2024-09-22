@@ -1,0 +1,15 @@
+.line-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 4px;
+  background-color: #ccc;
+  position: relative;
+}
+
+.dot {
+  height: 10px;
+  width: 10px;
+  background-color: darkgreen;
+  border-radius: 50%;
+}

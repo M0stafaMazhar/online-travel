@@ -7,11 +7,16 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 import { SelectedFlightGuardGuard } from './guards/selected-flight-guard.guard';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
-  { path: 'results', component: FlightResultComponent },
-  { path: 'flight-details', component: SelectedFlightComponent , canActivate:[SelectedFlightGuardGuard] },
-  { path: 'not-found' , component:NotFoundComponent},
-  { path: '**' , redirectTo: 'not-found'}
+  { path: '', component: HomeComponent, title: 'Home' },
+  { path: 'results', component: FlightResultComponent, title: 'Results' },
+  {
+    path: 'flight-details',
+    component: SelectedFlightComponent,
+    title: 'Flight Details',
+    canActivate: [SelectedFlightGuardGuard],
+  },
+  { path: 'not-found', component: NotFoundComponent, title: '404' },
+  { path: '**', redirectTo: 'not-found' },
 ];
 
 @NgModule({

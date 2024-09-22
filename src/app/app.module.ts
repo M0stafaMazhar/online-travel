@@ -24,6 +24,7 @@ import { FlightPathComponent } from './components/flight-result/flight-card/flig
 import { DtoStopComponent } from './components/dto-stop/dto-stop.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
+import { DotedLineComponent } from './components/doted-line/doted-line.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -46,7 +47,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     FlightPathComponent,
     DtoStopComponent,
     NavBarComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    DotedLineComponent
   ],
   imports: [
     BrowserModule,

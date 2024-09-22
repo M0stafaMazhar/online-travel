@@ -3,7 +3,7 @@
     <img
       src="{{ airline.airlineLogo }}"
       alt="{{ airline.airlineName }} logo"
-      class="w-25"
+      class="w-50"
     />
     <p>
       {{ airline.alternativeBusinessName }}
@@ -17,8 +17,10 @@
     </div>
     <div class="text-center col-6">
       <p class="">{{ flightDates.duration | convertTime }}</p>
-      <hr class="" />
-      <p class="" *ngIf="numOfStops > 0">{{"STOPS" | translate}} : {{ numOfStops }}</p>
+      <app-doted-line [numberOfDots]="numOfStops"></app-doted-line>
+      <p class="" *ngIf="numOfStops > 0">
+        {{ "STOPS" | translate }} : {{ numOfStops }}
+      </p>
     </div>
     <div class="col-3">
       <h6>{{ arrivalAirport.airportCode }}</h6>

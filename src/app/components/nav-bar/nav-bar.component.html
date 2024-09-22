@@ -1,7 +1,8 @@
-<nav class="navbar navbar-dark bg-success text-light">
+<nav class="navbar navbar-dark bg-success text-light sticky-top">
   <div class="container">
-
     <h5>Booking App</h5>
-    <button (click)="changeLanguage()" class="btn btn-success">{{"LNG" | translate}}</button>
+    <button (click)="changeLanguage()" class="btn btn-success">
+      {{ "LNG" | translate }}
+    </button>
   </div>
 </nav>

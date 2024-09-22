@@ -1,7 +1,9 @@
 <mat-accordion>
   <mat-expansion-panel hideToggle>
     <mat-expansion-panel-header>
-      <mat-panel-title> <h5 class="text-success">{{"FILTERS" | translate}}</h5> </mat-panel-title>
+      <mat-panel-title>
+        <h5 class="text-success">{{ "FILTERS" | translate }}</h5>
+      </mat-panel-title>
     </mat-expansion-panel-header>
     <form class="text-success" #filterForm="ngForm">
       <div class="form-group">
@@ -23,11 +25,11 @@
           *ngIf="airportQuery.dirty && airportQuery.hasError('noArabic')"
           class="text-danger"
         >
-          <p>{{"ARERROR" | translate}}</p>
+          <p>{{ "ARERROR" | translate }}</p>
         </div>
       </div>
       <hr />
-      <h6>{{"STOPS" | translate}}</h6>
+      <h6>{{ "STOPS" | translate }}</h6>
       <div class="from-group">
         <label for="direct">
           <input
@@ -35,17 +37,17 @@
             type="checkbox"
             [(ngModel)]="filters.stops.direct"
           />
-          {{"DIRECT" | translate}}
+          {{ "DIRECT" | translate }}
         </label>
         <br />
         <label for="one">
           <input name="sone" type="checkbox" [(ngModel)]="filters.stops.one" />
-          {{"ONESTOP" | translate}}
+          {{ "ONESTOP" | translate }}
         </label>
         <br />
         <label for="more">
           <input name="more" type="checkbox" [(ngModel)]="filters.stops.more" />
-          {{"MORESTOPS" | translate}}
+          {{ "MORESTOPS" | translate }}
         </label>
       </div>
       <hr />
@@ -56,13 +58,18 @@
             type="checkbox"
             [(ngModel)]="filters.refundable"
           />
-          {{"REFUNDABLE" | translate}}
+          {{ "REFUNDABLE" | translate }}
         </label>
       </div>
       <hr />
 
-      <button type="button" class="brn btn-success col-12" (click)="onFilter()">
-        {{"FILTER" | translate}}
+      <button
+        type="button"
+        class="brn btn-success col-12"
+        (click)="onFilter()"
+        [disabled]="filterForm.invalid"
+      >
+        {{ "FILTER" | translate }}
       </button>
     </form>
   </mat-expansion-panel>
